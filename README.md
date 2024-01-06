@@ -21,7 +21,7 @@ Als shortcode folgendes snippet einfügen:
 <iframe 
   src="https://thhaase.github.io/interactive_map/" 
   width= 100%
-  height=700px 
+  height=750px 
   frameborder="0" allowfullscreen
 >
 </iframe>
