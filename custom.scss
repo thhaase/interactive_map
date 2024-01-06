@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+/*-- scss:defaults --*/
+
+$background: #bbd5a8;
+$darkblue: #19486A;
+
+
+/*-- scss:rules --*/
+body {
+  background-color: $background;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  color: $darkblue;
+  text-align: center;
+}
+
+.control-label {
+  font-family: 'Poppins', sans-serif;
+  color: $darkblue;
+}
+
+/*-- scss:mixins --*/
+/*-- scss:functions --*/
+/*-- scss:uses --*/
