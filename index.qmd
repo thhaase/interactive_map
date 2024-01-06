@@ -1,0 +1,21 @@
+---
+title: "Nachhaltige Orte Gießen"
+format:
+  html: 
+    toc: false
+
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(crosstalk)
+library(leaflet)
+
+sd <- SharedData$new(quakes[sample(nrow(quakes), 100),])
+
+filter_slider("mag", "Magnitude", sd, column=~mag, step=0.1, width=250)
+
+bscols(
+  leaflet(sd) %>% addTiles() %>% addMarkers()
+)
+
+```
