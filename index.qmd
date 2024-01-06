@@ -20,6 +20,7 @@ getColor <- function(locations) {
       type == "Garten" ~ "green",
       type == "Gastronomie" ~ "orange",
       type == "Shop" ~ "lightblue",
+      type == "Teilen" ~ "purple",
       TRUE ~ "red"
     )
   })
@@ -29,17 +30,22 @@ getIcon <- function(locations) {
   sapply(locations$type, function(type) {
     case_when(
       type == "Garten" ~ "leaf",
-      type == "Gastronomie" ~ "utensils",
-      type == "Shop" ~ "cart-shopping",
-      TRUE ~ "ios-close"
+      type == "Gastronomie" ~ "restaurant",
+      type == "Shop" ~ "cart",
+      type == "Teilen" ~ "contract",
+      TRUE ~ "xmark"
     )
   })
 }
 
 # load data
 locations <- read.csv("locations.csv") %>% 
-  mutate(type = factor(type))
+  mutate(type = factor(type)) %>% 
+  mutate(ID = row_number())
   
+# create shared data for crosstalk
+shared_locations <- SharedData$new(locations, key = ~ID)
+
 # implement filter
 bscols(
   widths = c(1,5,5,1), 
@@ -47,7 +53,7 @@ bscols(
   filter_select(
     id = "location_filter",
     label = "Filter Ortstyp",
-    sharedData = SharedData$new(locations, key = ~name),
+    sharedData = shared_locations,
     group = ~type,
     allLevels = TRUE,
     multiple = TRUE
@@ -57,13 +63,15 @@ bscols(
 # get icons
 icons <- awesomeIcons(
   icon = getIcon(locations),
-  iconColor = 'black',
-  library = 'fa',
+#  icon = "leaf",
+  iconColor = "black",
+  library = "ion",
   markerColor = getColor(locations)
+#  markerColor = "green"
 )
 
 # create Map
-leaflet(locations) %>% 
+leaflet(shared_locations) %>% 
   addTiles() %>%
   setView(lng = 8.6731, lat = 50.5867, zoom = 13) %>% 
   addAwesomeMarkers(
