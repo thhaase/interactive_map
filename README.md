@@ -3,7 +3,7 @@ Seminararbeit - Haus der Nachhaltigkeit
 
 [thhaase.github.io/interactive_map/](thhaase.github.io/interactive_map/)
 
-# Einbinden in Wordpress-Website 
+## Einbinden in Wordpress-Website 
 In Elementor das _"Shortcode"_ Modul an der gewünschten Stelle einfügen. 
 Als shortcode folgendes snippet einfügen: 
 ```html
