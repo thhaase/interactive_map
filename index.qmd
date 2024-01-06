@@ -13,32 +13,39 @@ library(crosstalk)
 library(leaflet)
 library(dplyr)
 
-# define functions for Map-Markers
+# define functions for Map-Markers ----
 getColor <- function(locations) {
   sapply(locations$type, function(type) {
     case_when(
-      type == "Garten" ~ "green",
-      type == "Gastronomie" ~ "orange",
-      type == "Shop" ~ "lightblue",
-      type == "Teilen" ~ "purple",
-      TRUE ~ "red"
+      type == "Garten" ~ "#5AE943",
+      type == "Gastronomie" ~ "#FDCB4E",
+      type == "Shop" ~ "#5EE2FF",
+      type == "Teilen" ~ "#BF5EFF",
+      TRUE ~ "#E94843"
     )
   })
 }
 
-getIcon <- function(locations) {
-  sapply(locations$type, function(type) {
-    case_when(
-      type == "Garten" ~ "leaf",
-      type == "Gastronomie" ~ "restaurant",
-      type == "Shop" ~ "cart",
-      type == "Teilen" ~ "contract",
-      TRUE ~ "xmark"
-    )
-  })
-}
+Iconheight <- 38
+Iconwidth <- 38
 
-# load data
+myIcons <- iconList(
+  Garten = makeIcon(iconUrl = "media/1.svg", 
+                    iconWidth = Iconwidth, 
+                    iconHeight = Iconheight),
+  Gastronomie = makeIcon(iconUrl = "media/2.svg", 
+                         iconWidth = Iconwidth,
+                         iconHeight = Iconheight),
+  Shop = makeIcon(iconUrl = "media/3.svg", 
+                  iconWidth = Iconwidth, 
+                  iconHeight = Iconheight),
+  Teilen = makeIcon(iconUrl = "media/4.svg",
+                    iconWidth = Iconwidth, 
+                    iconHeight = Iconheight) 
+  )
+
+
+# load data ----
 locations <- read.csv("locations.csv") %>% 
   mutate(type = factor(type)) %>% 
   mutate(ID = row_number())
@@ -46,7 +53,7 @@ locations <- read.csv("locations.csv") %>%
 # create shared data for crosstalk
 shared_locations <- SharedData$new(locations, key = ~ID)
 
-# implement filter
+# implement filter ----
 bscols(
   widths = c(1,5,5,1), 
   list(),
@@ -60,26 +67,17 @@ bscols(
   )
 )
 
-# get icons
-icons <- awesomeIcons(
-  icon = getIcon(locations),
-#  icon = "leaf",
-  iconColor = "black",
-  library = "ion",
-  markerColor = getColor(locations)
-#  markerColor = "green"
-)
 
 # create Map
 leaflet(shared_locations) %>% 
   addTiles() %>%
   setView(lng = 8.6731, lat = 50.5867, zoom = 13) %>% 
-  addAwesomeMarkers(
+  addMarkers(
     lng = ~longitude,
     lat = ~latitude,
-    icon=icons,
+    icon = ~myIcons[as.character(type)],
     popup = ~paste("<strong>", name, "</strong><br>", description, "<br><em>Type:</em> ", type)
-  ) %>% 
+  ) %>%
   addEasyButton(easyButton(
     icon="fa-map", title="Standardansicht - Gießen",
     onClick=JS("function(btn, map){ map.setView([50.5867, 8.6731], 13);}"))) %>%
