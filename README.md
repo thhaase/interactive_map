@@ -1,9 +1,17 @@
-# Interaktive Karte Nachhaltige Orte in Gießen
+> [!WARNING]  
+> This project is currently in work and supposed to be finished until the 30.01.2024.
+> Dieses Projekt ist derzeit in Arbeit und soll bis zum 30.01.2024 abgeschlossen sein.
+
+---
+
+
+## Interaktive Karte Nachhaltige Orte in Gießen
+
 [thhaase.github.io/interactive_map/](thhaase.github.io/interactive_map/)
 
 Die Interaktive Karte wird im Rahmen des Seminars _Haus der Nachhaltigkeit 2_ bei Prof. Dr. York Kautt im WS23/24 erstellt. 
-
 Es werden Orte in Gießen abgebildet, welche im Zusammenhang mit Nachhaltigkeit und der ökologischen Transformation stehen.
+
 
 ## Einbinden in Wordpress-Website 
 In Elementor das _"Shortcode"_ Modul an der gewünschten Stelle einfügen. 
