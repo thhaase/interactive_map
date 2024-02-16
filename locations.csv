@@ -1,22 +1,30 @@
-name,description,longitude,latitude,type
-Campusgarten Phil2,Auf dem Campus Philosophikum 2 wurden im Rahmen des Seminars zum Haus der Nachhaltigkeit Hochbeete von Studierenden erbaut.,8.701895,50.572490,Garten
-Campusgarten Nawi,Studentischer Gemeinschaftsgarten auf dem Naturwissenschaftlichen Campus,8.671978,50.569802,Garten
-Stadtacker Gießen,Der Stadtacker ist ein Pflanzenbauprojekt im Gießener Stadtpark. Jeder kann teilnehmen.,8.691965,50.593008,Garten
-Die Hardtgärten,Pädagogisch organisierter Kinder- und Jugensbauernhof mit regelmäßigen Mitmachangeboten,8.641786,50.589687,Garten
-INGE e.V.,"Ökologischer Gemeinschaftsgarten für Gemüseanbau, Obstbäume und Beerensträucher ",8.699128,50.597473,Garten
-DRK Kleiderladen,Second Hand Kleidung zu kaufen ist Nachhaltig. Alle Erlöse fließen direkt in DRK Arbeit vor Ort.,8.689713,50.597617,Shop
-DRK Kleiderladen,Second Hand Kleidung zu kaufen ist Nachhaltig. Alle Erlöse fließen direkt in DRK Arbeit vor Ort.,8.662829,50.588903,Shop
-Umsonstladen e.V.,Hier kann gebrauchtes abgegeben und „eingekauft“/besorgt werden,8.706520,50.588373,Teilen
-Antik & Trödel,Am ersten Sonntag des Monats findet hier Hessens größter Hallenflohmarkt regelmäßig statt. ,8.660471,50.585905,Shop
-Öko Zentrum Gießen,Ökologisches Bauen mit Naturbaustoffen,8.682227,50.576732,Shop
-Reynabi Döner Imbiss,Döner mit regionalen und möglichst saisionalen Zutaten,8.696425,50.586028,Gastronomie
-Reynabi Döner Imbiss,Döner mit regionalen und möglichst saisionalen Zutaten,8.674279,50.588486,Gastronomie
-veganatural,"Vegane, biozertifizierte Speisen werden hier ohne Plastik verpackt und nachhaltig serviert",8.682772,50.576286,Gastronomie
-Fairteiler,Foodsharing-Schrank,8.684938,50.575491,Teilen
-Fairteiler,Foodsharing-Schrank,8.678959,50.579084,Teilen
-offener Bücherschrank,,8.699822,50.573966,Teilen
-offener Bücherschrank,,8.673959,50.584020,Teilen
-Weltladen,Weltläden stehen für fairen und gerechten Handel,8.675684,50.586306,Shop
-Unverpacktes,,8.670501,50.585729,Shop
-Gartenbau Koch,"Obst und Gemüse, saisional und regional einkaufen",8.673847,50.586126,Shop
-Klatschmohn Naturkost,"Bio-Lebensmittelladen und Cafe – CO2neutral, Bio-zertifiziert, fair und ökologisch",8.676438,50.585518,Shop
+name,description,url,longitude,latitude,type
+Campusgarten Phil2,Auf dem Campus Philosophikum 2 wurden im Rahmen des Seminars zum Haus der Nachhaltigkeit Hochbeete von Studierenden erbaut.,https://www.hdn-giessen.de,8.701895,50.572490,Garten
+Campusgarten Nawi,Studentischer Gemeinschaftsgarten auf dem Naturwissenschaftlichen Campus,https://www.instagram.com/campusgarten.nawi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==,8.671978,50.569802,Garten
+Stadtacker Gießen,Der Stadtacker ist ein Pflanzenbauprojekt im Gießener Stadtpark. Jeder kann teilnehmen.,https://www.stadtacker.de/,8.691965,50.593008,Garten
+Die Hardtgärten,Pädagogisch organisierter Kinder- und Jugensbauernhof mit regelmäßigen Mitmachangeboten,https://www.hardtgaerten.de/,8.641786,50.589687,Garten
+INGE e.V.,"Ökologischer Gemeinschaftsgarten für Gemüseanbau, Obstbäume und Beerensträucher ",https://inge-garten-giessen.de/,8.699128,50.597473,Garten
+DRK Kleiderladen,Second Hand Kleidung zu kaufen ist Nachhaltig. Alle Erlöse fließen direkt in DRK Arbeit vor Ort.,https://drk-mittelhessen.de/angebote/lange-gut-leben/kleiderlaeden.html,8.689713,50.597617,Shop
+DRK Kleiderladen,Second Hand Kleidung zu kaufen ist Nachhaltig. Alle Erlöse fließen direkt in DRK Arbeit vor Ort.,https://drk-mittelhessen.de/angebote/lange-gut-leben/kleiderlaeden.html,8.662829,50.588903,Shop
+Umsonstladen e.V.,Hier kann gebrauchtes abgegeben und „eingekauft“/besorgt werden,,8.706520,50.588373,Teilen
+Antik & Trödel,Am ersten Sonntag des Monats findet hier Hessens größter Hallenflohmarkt regelmäßig statt. ,https://www.antik-troedel-markt.de/,8.660471,50.585905,Shop
+Öko Zentrum Gießen,Ökologisches Bauen mit Naturbaustoffen,https://oeko-zentrum.de/giessen/,8.682227,50.576732,Shop
+Reynabi Döner Imbiss,Döner mit regionalen und möglichst saisionalen Zutaten,https://reynabi-doener-und-so.de/,8.696425,50.586028,Gastronomie
+Reynabi Döner Imbiss,Döner mit regionalen und möglichst saisionalen Zutaten,https://reynabi-doener-und-so.de/,8.674279,50.588486,Gastronomie
+veganatural,"Vegane, biozertifizierte Speisen werden hier ohne Plastik verpackt und nachhaltig serviert",https://veganatural.de/,8.682772,50.576286,Gastronomie
+Fairteiler,Foodsharing-Schrank,https://foodsharing.de/?page=fairteiler&bid=301,8.684938,50.575491,Teilen
+Fairteiler,Foodsharing-Schrank,https://foodsharing.de/?page=fairteiler&bid=301,8.678959,50.579084,Teilen
+offener Bücherschrank,,,8.699822,50.573966,Teilen
+offener Bücherschrank,,,8.673959,50.584020,Teilen
+Weltladen,Weltläden stehen für fairen und gerechten Handel,https://weltladen-giessen.de/,8.675684,50.586306,Shop
+Unverpacktes,Einkaufen ohne Plastikverpackungen,https://www.unverpacktes-giessen.de/,8.670501,50.585729,Shop
+Gartenbau Koch,"Obst und Gemüse, saisional und regional einkaufen",https://gartenbau-koch-giessen.de/,8.673847,50.586126,Shop
+Klatschmohn Naturkost,"Bio-Lebensmittelladen und Cafe – CO2neutral, Bio-zertifiziert, fair und ökologisch",https://www.klatschmohn.bio/,8.676438,50.585518,Shop
+Nature & Style,nachhaltige Möbel,https://natureandstyle.de/startseite/,8.692588,50.572308,Shop
+Jugendwerkstatt Gießen,"Möbel, Haushaltswaren und Kleidung – Günstig, Gemeinnützig, Nachhaltig",https://www.jugendwerkstatt-giessen.de/das-kaufhaus,8.665089,50.596070 ,Shop
+Unverbrauchtes,Second-hand Laden ,,8.671691,5.0590133,Shop
+Möbelschnäppchen & Mehr,Second-hand Laden ,https://moebelschnaeppchen-giessen.de/,8.668167,50.580922,Shop
+Makerspace,"Offene Werkstatt, 3D Druck-Kurse, Fortbildungen und Treffen von „Makern“ und Bastlern",https://makerspace-giessen.de/,8.677853,50.589759,Teilen
+Haus der Nachhaltigkeit e.V.,"Hier ist das HdN aktuell gemeldet, ein physisches Haus gibt es aber leider noch nicht! Dafür findet ihr auf unserer Website hdn-giessen.de viele Informationen.",https://www.hdn-giessen.de,8.700213,50.573043,Info
+das ALLrad,"Das Allmende Lastenrad Projekt verleiht Lastenräder, Handwagen uvm. auf Spendenbasis. Auf der Website sind alle Teilnehmenden mit Leihort aufgeführt.",https://www.dasallrad.org,8.692180,50.584746,Teilen
+Freiwilligenzentrum e.V.,Als Privatperson aktiv werden und bei unterschiedlichsten Projekten helfen,https://freiwilligenzentrum-giessen.de/aktiv-werden/privatperson/einsatzstellen-umwelt-nachhaltigkeit-klimaschutz/,8.675607,50.588567,Teilen

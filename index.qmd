@@ -41,18 +41,37 @@ myIcons <- iconList(
                   iconHeight = Iconheight),
   Teilen = makeIcon(iconUrl = "media/4.svg",
                     iconWidth = Iconwidth, 
-                    iconHeight = Iconheight) 
+                    iconHeight = Iconheight),
+  Info = makeIcon(iconUrl = "media/6.svg",
+                    iconWidth = Iconwidth, 
+                    iconHeight = Iconheight)
   )
 
 
 # load data ----
 locations <- read.csv("locations.csv") %>% 
   mutate(type = factor(type)) %>% 
-  mutate(ID = row_number())
-  
-# create shared data for crosstalk
-shared_locations <- SharedData$new(locations, key = ~ID)
+  mutate(ID = row_number()) %>% 
+  mutate(popup_content = paste(
+    '<strong>', name, '</strong><br>',
+    description, '<br>',
+    ifelse(url != "", paste('<br><em>Website:</em> ', '<a href="', url, '" target="_blank">', substr(url, 9, nchar(url)), '</a>', '<br>'), ""),
+    '<br><em>Type:</em> ', type
+  ))
 
+
+
+# create shared data for crosstalk
+shared_locations <- SharedData$new(locations, key = ~ID) 
+
+
+#paste('<strong>', name, '</strong><br>',
+#                   description,'<br>',
+#                   if(url != ""){
+#                     paste('<em>Website:</em> ',
+#                           '<a href="',url,'">',url,'</a>','<br>'),}
+#                   '<br><em>Type:</em> ', type)
+  
 # implement filter ----
 bscols(
   widths = c(1,5,5,1), 
@@ -76,8 +95,7 @@ leaflet(shared_locations) %>%
     lng = ~longitude,
     lat = ~latitude,
     icon = ~myIcons[as.character(type)],
-    popup = ~paste("<strong>", name, "</strong><br>", description, "<br><em>Type:</em> ", type)
-  ) %>%
+    popup = ~popup_content) %>%
   addEasyButton(easyButton(
     icon="fa-map", title="Standardansicht - Gießen",
     onClick=JS("function(btn, map){ map.setView([50.5867, 8.6731], 13);}"))) %>%
