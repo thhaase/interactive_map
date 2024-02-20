@@ -33,6 +33,41 @@ body {
   color: $darkblue;
 }
 
+
+
+/* table */
+
+.table.dataTable tbody tr.active td {
+  background-color: #FE904D;
+  color: white;
+}
+
+.table.dataTable {
+  clear: both;
+  margin-top: none !important;
+  margin-bottom: none !important;
+  max-width: none !important;
+  border-collapse: collapse !important; /* Collapses borders */
+  border: 0 !important; /* Removes any border */
+}
+
+.table {
+  --bs-table-color-type: initial;
+  --bs-table-bg-type: initial;
+  --bs-table-color-state: initial;
+  --bs-table-bg-state: initial;
+  --bs-table-color: $darkblue;
+  --bs-table-bg: #fff;
+  --bs-table-border-color: #dee2e6;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: #373a3c;
+  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-active-color: #373a3c;
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: #373a3c;
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+}
+
 /*-- scss:mixins --*/
 /*-- scss:functions --*/
 /*-- scss:uses --*/

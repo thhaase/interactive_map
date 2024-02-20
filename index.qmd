@@ -12,6 +12,8 @@ format:
 library(crosstalk)
 library(leaflet)
 library(dplyr)
+library(reactable)
+library(DT)
 
 # define functions for Map-Markers ----
 getColor <- function(locations) {
@@ -64,7 +66,6 @@ locations <- read.csv("locations.csv") %>%
 # create shared data for crosstalk
 shared_locations <- SharedData$new(locations, key = ~ID) 
 
-
 #paste('<strong>', name, '</strong><br>',
 #                   description,'<br>',
 #                   if(url != ""){
@@ -74,8 +75,7 @@ shared_locations <- SharedData$new(locations, key = ~ID)
   
 # implement filter ----
 bscols(
-  widths = c(1,5,5,1), 
-  list(),
+  widths = c(5,1,5,1), 
   filter_select(
     id = "location_filter",
     label = "Filter Ortstyp",
@@ -85,24 +85,73 @@ bscols(
     multiple = TRUE
   )
 )
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Plots ----
+
+bscols(
+  widths = c(6,6),
+  device = "sm",
+## Map ----
+    leaflet(shared_locations) %>% 
+      addTiles() %>%
+      setView(lng = 8.6731, lat = 50.5867, zoom = 13) %>% 
+      addMarkers(
+        lng = ~longitude,
+        lat = ~latitude,
+        icon = ~myIcons[as.character(type)],
+        popup = ~popup_content) %>%
+      addEasyButton(
+        easyButton(
+          icon="fa-map", 
+          title="Standardansicht - Gießen",
+          onClick=JS("function(btn, map){ map.setView([50.5867, 8.6731], 13);}")
+          )
+        ),
+
+## Table ----
+  datatable(shared_locations,
+    extensions = c(
+      "Buttons",  # add download buttons, etc
+      "Scroller"  # for scrolling down the rows rather than pagination
+    ),
+    rownames = FALSE,  # remove rownames
+    style = "bootstrap",
+    class = "compact",
+    width = "100%",
+    options = list(
+      initComplete = JS("function(settings, json) {",
+                        "$(this.api().table().header()).css({'background-color': '#dfd4ae', 'color': '#19486a'});","}"),
+      dom = "ti",  # specify content (search box, etc)
+      deferRender = TRUE,
+      scrollY = 300,
+      scroller = TRUE,
+      order = list(list(0, 'asc')),
+      columnDefs = list(
+        list(
+          visible = FALSE,
+          targets = c(1,2,3,4,6,7)
+        )
+      ), 
+      buttons = list(
+        I("colvis")  # turn columns on and off
+        )
+      ),
+    colnames = c(
+      "Name" = "name",
+      "Beschreibung" = "description",
+      "Website" = "url",
+      "Longitude" = "longitude",
+      "Latitude" = "latitude",
+      "Typ" = "type",
+      "ID" = "ID",
+      "Marker Text" = "popup_content"
+    )
+  )
 
 
-# create Map
-leaflet(shared_locations) %>% 
-  addTiles() %>%
-  setView(lng = 8.6731, lat = 50.5867, zoom = 13) %>% 
-  addMarkers(
-    lng = ~longitude,
-    lat = ~latitude,
-    icon = ~myIcons[as.character(type)],
-    popup = ~popup_content) %>%
-  addEasyButton(easyButton(
-    icon="fa-map", title="Standardansicht - Gießen",
-    onClick=JS("function(btn, map){ map.setView([50.5867, 8.6731], 13);}"))) %>%
-  addEasyButton(easyButton(
-    icon="fa-crosshairs", title="Mein Standort",
-    onClick=JS("function(btn, map){ map.locate({setView: true}); }")))
 
-
-
+)
+            
 ```
