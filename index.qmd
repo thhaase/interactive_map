@@ -14,6 +14,7 @@ library(leaflet)
 library(dplyr)
 library(reactable)
 library(DT)
+library(htmltools)
 
 # define functions for Map-Markers ----
 getColor <- function(locations) {
@@ -75,7 +76,8 @@ shared_locations <- SharedData$new(locations, key = ~ID)
   
 # implement filter ----
 bscols(
-  widths = c(5,1,5,1), 
+  widths = c(6,6),
+  HTML("<p></p>"),
   filter_select(
     id = "location_filter",
     label = "Filter Ortstyp",
@@ -93,6 +95,7 @@ bscols(
 bscols(
   widths = c(6,6),
   device = "sm",
+
 ## Map ----
     leaflet(shared_locations) %>% 
       addTiles() %>%
@@ -109,6 +112,7 @@ bscols(
           onClick=JS("function(btn, map){ map.setView([50.5867, 8.6731], 13);}")
           )
         ),
+
 
 ## Table ----
   datatable(shared_locations,
