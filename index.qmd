@@ -2,6 +2,7 @@
 title: "Nachhaltige Orte Gießen"
 format:
   html: 
+    page-layout: full
     toc: false
     theme: 
       - cosmo
@@ -76,7 +77,7 @@ shared_locations <- SharedData$new(locations, key = ~ID)
   
 # implement filter ----
 bscols(
-  widths = c(6,6),
+  widths = c(8,4),
   HTML("<p></p>"),
   filter_select(
     id = "location_filter",
@@ -93,7 +94,7 @@ bscols(
 # Plots ----
 
 bscols(
-  widths = c(6,6),
+  widths = c(8,4),
   device = "sm",
 
 ## Map ----
