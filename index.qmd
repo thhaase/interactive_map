@@ -128,7 +128,7 @@ bscols(
     options = list(
       initComplete = JS("function(settings, json) {",
                         "$(this.api().table().header()).css({'background-color': '#dfd4ae', 'color': '#19486a'});","}"),
-      dom = "ti",  # specify content (search box, etc)
+      dom = "tiQ",  # specify content (search box, etc)
       deferRender = TRUE,
       scrollY = 300,
       scroller = TRUE,
