@@ -1,11 +1,3 @@
-> [!WARNING]  
-> This project is currently in work and supposed to be finished until the 04.03.2024.
->
-> Dieses Projekt ist derzeit in Arbeit und soll bis zum 04.03.2024 abgeschlossen sein.
-
----
-
-
 ## Interaktive Karte Nachhaltige Orte in Gießen
 
 [thhaase.github.io/interactive_map/](thhaase.github.io/interactive_map/)
